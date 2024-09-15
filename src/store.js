@@ -7,16 +7,16 @@ import thunk from 'redux-thunk'
 
 
 const reducers = combineReducers({
-    anecdotes: reducer,
-    notifications: notificationReducer,
-    filter: filterReducer
-  })
+  anecdotes: reducer,
+  notifications: notificationReducer,
+  filter: filterReducer
+})
 
 const store = createStore(
-    reducers,
-    composeWithDevTools(
-      applyMiddleware(thunk)
-    )
+  reducers,
+  composeWithDevTools(
+    applyMiddleware(thunk)
   )
-  
-  export default store
+)
+
+export default store

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const Notification = (props) => {  
+const Notification = (props) => {
   const notification = props.notification
 
   const style = {

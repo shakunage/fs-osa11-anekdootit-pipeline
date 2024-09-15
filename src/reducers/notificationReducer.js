@@ -1,25 +1,26 @@
+// eslint-disable-next-line no-unused-vars
 const notificationReducer = (state = null, action) => {
-    switch(action.type) {
-        case 'SET_NOTIFICATION':
-            return action.string
-        case 'HIDE':
-            return null
-        default:
-            return null
-      }
+  switch(action.type) {
+  case 'SET_NOTIFICATION':
+    return action.string
+  case 'HIDE':
+    return null
+  default:
+    return null
   }
+}
 
 const hide = () => {
-    return ({
-        type: 'HIDE'
-    })
+  return ({
+    type: 'HIDE'
+  })
 }
 
 const show = (string) => {
-    return ({
-        type: 'SET_NOTIFICATION',
-        string: string
-    })
+  return ({
+    type: 'SET_NOTIFICATION',
+    string: string
+  })
 }
 
 /*
@@ -34,7 +35,7 @@ export const setNotification = (string, duration) => {
 }
 */
 
-let timeoutId 
+let timeoutId
 
 export const setNotification = (string, duration) => {
 
@@ -46,9 +47,9 @@ export const setNotification = (string, duration) => {
     }
 
     timeoutId = setTimeout(() => {
-        dispatch(hide())
+      dispatch(hide())
     }, duration * 1000)
   }
 }
 
-  export default notificationReducer
+export default notificationReducer
