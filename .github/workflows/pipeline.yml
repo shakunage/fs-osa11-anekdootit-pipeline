@@ -1,12 +1,12 @@
 name: Deployment pipeline
 on:
-    push:
-      branches:
-        - main
-    pull_request:
-      branches:
-        - main
-      types: [opened, synchronize]
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize]
 
 jobs:
   simple_deployment_pipeline:
@@ -16,8 +16,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '16'
-      - name: Install dependencies 
-        run: npm install  
+      - name: Install dependencies
+        run: npm install
+      - name: Print working directory
+        run: pwd
+      - name: List files
+        run: ls -la
       - name: Check style
         run: npm run eslint
       - name: Build the app
