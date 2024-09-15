@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import App from './App'
 
 
+// eslint-disable-next-line react/no-deprecated
 ReactDOM.render(
   <Provider store={store}>
     <App />
