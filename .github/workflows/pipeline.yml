@@ -18,10 +18,6 @@ jobs:
           node-version: '16'
       - name: Install dependencies
         run: npm install
-      - name: Print working directory
-        run: pwd
-      - name: List files
-        run: ls -la
       - name: Check style
         run: npm run eslint
       - name: Build the app
