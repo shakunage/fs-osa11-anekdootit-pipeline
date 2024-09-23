@@ -1,0 +1,8 @@
+webpack.config.js
+node_modules/
+dist/
+*cypress*
+**/*.cy.js
+**/*.cy.ts
+**/*.spec.js
+**/*.spec.ts
