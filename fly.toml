@@ -6,10 +6,6 @@
 app = 'fs-osa11-anekdootit-pipeline'
 primary_region = 'sjc'
 
-[build]
-  [build.args]
-    NODE_VERSION = "16"
-
 [env]
   PORT = "3000"
 
