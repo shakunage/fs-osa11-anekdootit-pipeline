@@ -17,6 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "start-prod": "serve -s build & npx json-server --watch db.json --port 3001",
     "test": "jest",
     "server": "json-server -p3001 --watch db.json",
     "eslint": "eslint './**/*.{js,jsx}'",
@@ -58,6 +59,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.12.1",
+    "@flydotio/dockerfile": "^0.5.8",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "cypress": "^13.14.2",
