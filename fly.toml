@@ -16,17 +16,27 @@ primary_region = 'sjc'
   internal_port = 3000
   protocol = "tcp"
   script_checks = []
-
   [services.concurrency]
     hard_limit = 25
     soft_limit = 20
-
   [[services.ports]]
     port = "80"   # Public port exposed by Fly.io (default HTTP port)
-  
   [[services.ports]]
     handlers = ["tls", "http"]
     port = "443"  # Public HTTPS port
+  
+[[services]]
+  internal_port = 3001  # Backend (JSON Server)
+  processes = ["backend"]
+  protocol = "tcp"
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+  [[services.ports]]
+    port = "81"   # Public HTTP for backend
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = "444"  # Public HTTPS for backend
 
 
 [[vm]]
