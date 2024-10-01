@@ -6,9 +6,6 @@
 app = 'fs-osa11-anekdootit-pipeline'
 primary_region = 'sjc'
 
-[env]
-  PORT = "3000"
-
 [processes]
   app = "npm run start-prod" 
   server = "npx json-server --watch db.json --port 3001"
