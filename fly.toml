@@ -10,7 +10,7 @@ primary_region = 'sjc'
   PORT = "3000"
 
 [processes]
-  app = "npm run start-prod & npx json-server --watch db.json --port 3001"
+  app = "npm run start-prod && npx json-server --watch db.json --port 3001"
 
 [http_service]
   internal_port = 3000
