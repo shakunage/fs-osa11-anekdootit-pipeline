@@ -17,6 +17,18 @@ primary_region = 'sjc'
   protocol = "tcp"
   script_checks = []
 
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+
+  [[services.ports]]
+    port = "80"   # Public port exposed by Fly.io (default HTTP port)
+  
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = "443"  # Public HTTPS port
+
+
 [[vm]]
   memory = '1gb'
   cpu_kind = 'shared'
