@@ -13,13 +13,12 @@ primary_region = 'sjc'
   app = "npm run start-prod" 
   server = "npx json-server --watch db.json --port 3001"
 
-[http_service]
+[[services]]
+  processes = ["app"]
+  http_checks = []
   internal_port = 3000
-  force_https = true
-  auto_stop_machines = 'stop'
-  auto_start_machines = true
-  min_machines_running = 0
-  processes = ['app']
+  protocol = "tcp"
+  script_checks = []
 
 [[vm]]
   memory = '1gb'
