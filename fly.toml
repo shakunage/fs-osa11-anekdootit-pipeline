@@ -27,7 +27,7 @@ primary_region = 'sjc'
   
 [[services]]
   internal_port = 3001  # Backend (JSON Server)
-  processes = ["backend"]
+  processes = ["server"]
   protocol = "tcp"
   [services.concurrency]
     hard_limit = 25
