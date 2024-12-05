@@ -1,14 +1,20 @@
 ARG NODE_VERSION=16.20.2
-FROM node:${NODE_VERSION}-slim as base
+FROM node:${NODE_VERSION}-slim AS base
 
 # Node.js app lives here
-WORKDIR /app
+WORKDIR /app/frontend
 
-FROM base as build
+FROM base AS build
 
-COPY . .
+RUN ls -a
+
+COPY ./package.json ./
+
+COPY ./package-lock.json ./
 
 RUN npm ci
+
+COPY . .
 
 RUN npm test
 
@@ -22,8 +28,5 @@ FROM base
 
 # Copy built application
 COPY --from=build /app /app
-
-# REMOVE AFTER TESTING!
-EXPOSE 3000
 
 CMD [ "npm", "run", "start-prod" ]

@@ -1,6 +1,6 @@
 FROM node:20-slim AS base
 
-WORKDIR /usr/src/app
+WORKDIR /app/backend
 COPY . .
 
 RUN npm install -g json-server

@@ -2,7 +2,7 @@ ARG NODE_VERSION=16.20.2
 FROM node:${NODE_VERSION}-slim as base
 
 # Node.js app lives here
-WORKDIR /app
+WORKDIR /app/frontend
 COPY . .
 
 RUN npm ci
